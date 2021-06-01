@@ -223,7 +223,6 @@ public class frmDashboard extends javax.swing.JFrame {
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_cash_receipt_25px.png"))); // NOI18N
         jLabel27.setText("Ingresos");
-        jLabel27.setBorder(new EmptyBorder(0,10,0,0));
         jLabel27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel27.setOpaque(true);
         jPanel5.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 40));
@@ -317,10 +316,9 @@ public class frmDashboard extends javax.swing.JFrame {
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_health_checkup_25px.png"))); // NOI18N
         jLabel24.setText("Atenciones de la semana");
-        jLabel24.setBorder(new EmptyBorder(0,10,0,0));
         jLabel24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel24.setOpaque(true);
-        jPanel8.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 190, 40));
+        jPanel8.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 200, 40));
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_graph_100px.png"))); // NOI18N
         jPanel8.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 120, 100));
