@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package view;
 import javax.swing.border.EmptyBorder;
-/**
- *
- * @author BS-PC
- */
+
 public class frmCitas extends javax.swing.JFrame {
 
     /**
@@ -34,7 +27,6 @@ public class frmCitas extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -43,27 +35,30 @@ public class frmCitas extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
         jLabel18 = new javax.swing.JLabel();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
         jLabel19 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        jToggleButton5 = new javax.swing.JToggleButton();
+        jLabel14 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,93 +72,93 @@ public class frmCitas extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel11.setText("MEDICO RESPONSABLE");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jLabel13.setText("FECHA");
+        jLabel13.setText("FECHA - HORA");
         jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jLabel14.setText("HORA");
-        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 130, -1));
-        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 120, -1));
-        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 230, -1));
+        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, -1));
+        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 120, -1));
+        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 130, 230, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jLabel12.setText("APELLIDOS");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jLabel12.setText("SEXO");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jLabel15.setText("NOMBRES");
-        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+        jLabel15.setText("TELEFONO");
+        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jLabel16.setText("DNI");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        jLabel16.setText("DOC. DE IDENTIDAD");
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel17.setText("F. NACIMIENTO");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, -1, -1));
         jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 170, -1));
-        jPanel4.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 80, -1));
-        jPanel4.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 80, -1));
-
-        jRadioButton1.setText("Diabetes");
-        jPanel4.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, -1, -1));
-
-        jRadioButton2.setText("Enfermedades pulmonar");
-        jPanel4.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
-
-        jRadioButton3.setText("Enfermedades cardiovascular");
-        jPanel4.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
-
-        jRadioButton4.setText("Hipertension");
-        jPanel4.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, -1, -1));
-
-        jRadioButton5.setText("Otros");
-        jPanel4.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, -1, -1));
+        jPanel4.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 150, -1));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
-        jLabel18.setText("FECHA Y HORA DE CITA");
+        jLabel18.setText("FECHA - HORA DE CITA");
         jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
-
-        jRadioButton6.setText("Fiebre");
-        jPanel4.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
-
-        jRadioButton7.setText("Tos");
-        jPanel4.add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
-
-        jRadioButton8.setText("Dificultad para respirar");
-        jPanel4.add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, -1, -1));
-
-        jRadioButton9.setText("Dolor de garganta");
-        jPanel4.add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
-
-        jRadioButton10.setText("Otros");
-        jPanel4.add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, -1, -1));
-
-        jRadioButton11.setText("Dolor muscular");
-        jPanel4.add(jRadioButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, -1, -1));
-
-        jRadioButton12.setText("Malestar general");
-        jPanel4.add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 340, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel19.setText("SINTOMAS");
         jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
-        jPanel4.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 230, -1));
+        jPanel4.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, 290, -1));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel20.setText("ANTECEDENTES MEDICOS");
-        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
-        jPanel4.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 340, -1));
+        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        jPanel4.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 340, -1));
 
-        jToggleButton1.setText("LIMPIAR");
-        jPanel4.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, -1, -1));
+        jToggleButton1.setText("CANCELAR");
+        jPanel4.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, -1, -1));
 
-        jToggleButton2.setText("REGISTRAR");
-        jPanel4.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, -1));
+        jToggleButton2.setText("SIGUIENTE");
+        jPanel4.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "CARNET EXTRANJERIA", "PASAPORTE" }));
+        jPanel4.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+        jPanel4.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 760, 60));
+        jPanel4.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 760, 70));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jLabel21.setText("APELLIDO PATERNO");
+        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        jPanel4.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 170, -1));
+
+        jToggleButton3.setText("ACEPTAR");
+        jPanel4.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, -1, -1));
+
+        jToggleButton4.setText("BUSCAR");
+        jPanel4.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, -1, -1));
+
+        jToggleButton5.setText("GUARDAR");
+        jPanel4.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jLabel14.setText("APELLIDO MATERNO");
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MASCULINO", "FEMENINO" }));
+        jPanel4.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 90, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jLabel22.setText("DIRECCIÓN");
+        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jLabel23.setText("NOMBRES");
+        jPanel4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, -1, -1));
+        jPanel4.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 180, 20));
+        jPanel4.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 120, -1));
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
+        jLabel24.setText("CORREO ELECTRONICO");
+        jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, -1, -1));
+        jPanel4.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 270, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -230,6 +225,8 @@ public class frmCitas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -241,29 +238,29 @@ public class frmCitas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton5;
     // End of variables declaration//GEN-END:variables
 }
