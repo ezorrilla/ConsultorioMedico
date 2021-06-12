@@ -572,7 +572,7 @@ public class frmDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPacientesActionPerformed
 
     private void lstPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstPacientesMouseClicked
-        historiaClinicaController.mostrar();
+        historiaClinicaController.mostrarHistoriaPaciente(lstPacientes.getSelectedIndex()+1);
     }//GEN-LAST:event_lstPacientesMouseClicked
 
     public JList<String> getLstPacientes() {
