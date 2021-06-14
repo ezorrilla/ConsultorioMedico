@@ -6,8 +6,6 @@ import model.MysqlConnect;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,12 +27,6 @@ public class PacienteDAO{
                 p.setCod_pac(Integer.parseInt(rs.getString("cod_pac")));
                 p.setNombre_pac(rs.getString("nombre_pac"));
                 p.setApellido_pac(rs.getString("apellido_pac"));
-                /*try{
-                    p.setFecha_nac( new SimpleDateFormat("dd-MM-yyyy").parse(rs.getString("fecha_nac")));
-                }catch(ParseException e){ }             
-                p.setSexo_pac(rs.getString("sexo_pac"));
-                p.setDni_pac(rs.getString("dni_pac"));
-                p.setDireccion(rs.getString("direccion"));*/
                 pacientes.add(p);
             }
             
@@ -43,7 +35,6 @@ public class PacienteDAO{
             mysqlConnect.disconnect();
         }
         return pacientes;
-    }
-       
+    } 
 
 }

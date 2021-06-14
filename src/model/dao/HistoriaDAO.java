@@ -6,6 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
 import model.Historia;
 import model.MysqlConnect;
 
@@ -31,7 +35,7 @@ public class HistoriaDAO {
                     " FROM historia h " +
                     " 	INNER JOIN paciente p " +
                     " 	ON p.cod_pac=h.cod_pac " +
-                    " 	AND h.cod_pac = " + cod_pac + "";
+                    " 	AND h.cod_pac = " + cod_pac;
         
         Historia historia = new Historia();
         try {
@@ -60,5 +64,30 @@ public class HistoriaDAO {
             mysqlConnect.disconnect();
         }
         return historia;
+    }    
+    
+    public int actualizarHistoriaClinica(Historia historia){
+        String sql = "UPDATE historia SET sangre = ?, VIH = ?, alergias = ?, alergia_medic = ?, medicamentos  = ?, enfermedades = ?, habitos = ?, antec_fami = ?, fecha_act = ? "
+                   + "WHERE cod_his = ?";       
+        try {
+            ps = mysqlConnect.connect().prepareStatement(sql);            
+            ps.setString(1,historia.getSangre());
+            ps.setString(2,historia.getVIH());
+            ps.setString(3,historia.getAlergias());
+            ps.setString(4,historia.getAlergia_medic());
+            ps.setString(5,historia.getMedicamentos());
+            ps.setString(6,historia.getEnfermedades());
+            ps.setString(7,historia.getHabitos());
+            ps.setString(8,historia.getAntec_fami());
+            ps.setDate(9, new java.sql.Date(Calendar.getInstance().getTime().getTime()));
+            ps.setInt(10, historia.getCod_his());
+            ps.executeUpdate();
+            
+            return ps.executeUpdate();
+        } catch (SQLException ex) {
+        } finally {
+            mysqlConnect.disconnect();
+        }
+        return 0;
     }
 }

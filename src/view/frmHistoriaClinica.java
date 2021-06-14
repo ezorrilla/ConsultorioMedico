@@ -5,8 +5,10 @@
  */
 package view;
 
+import controller.historiaClinicaController;
 import java.awt.Color;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTextPane;
 
 /**
@@ -32,6 +34,7 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblCod_Historia = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         cboSangre = new javax.swing.JComboBox<>();
@@ -57,6 +60,7 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         txpUsoMedicamentos = new javax.swing.JTextPane();
+        lblCod_Historia.getAccessibleContext().setAccessibleName("lblCod_Historia");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setText("Historia Clínica");
@@ -64,11 +68,6 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
         jLabel1.setText("Sangre");
 
         cboSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A-", "A+", "AB-", "AB+", "B-", "B+", "O-", "O+" }));
-        cboSangre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboSangreActionPerformed(evt);
-            }
-        });
 
         jLabel2.setText("VIH");
 
@@ -100,7 +99,13 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
         btnGuardar.setText("Guardar");
         btnGuardar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 51, 102), 1, true));
         btnGuardar.setBorderPainted(false);
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardar.setFocusable(false);
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnCerrar.setBackground(new java.awt.Color(255, 255, 255));
         btnCerrar.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -109,6 +114,7 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
         btnCerrar.setToolTipText("");
         btnCerrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnCerrar.setBorderPainted(false);
+        btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCerrar.setFocusCycleRoot(true);
         btnCerrar.setFocusPainted(false);
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -127,9 +133,6 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -165,8 +168,11 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(60, Short.MAX_VALUE))
+                                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,50 +230,19 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        
+        historiaClinicaController.ocultar();
     }//GEN-LAST:event_btnCerrarActionPerformed
 
-    private void cboSangreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboSangreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboSangreActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmHistoriaClinica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmHistoriaClinica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmHistoriaClinica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmHistoriaClinica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmHistoriaClinica().setVisible(true);
-            }
-        });
-    }
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        historiaClinicaController.actualizarHistoriaPaciente();
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     public JComboBox<String> getCboSangre() {
         return cboSangre;
+    }
+
+    public JLabel getLblCod_Historia() {
+        return lblCod_Historia;
     }
 
     public JComboBox<String> getCboVIH() {
@@ -318,6 +293,7 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JLabel lblCod_Historia;
     private javax.swing.JTextPane txpAlergias;
     private javax.swing.JTextPane txpAlergiasMedic;
     private javax.swing.JTextPane txpAntecedentes;
