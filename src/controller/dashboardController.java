@@ -24,5 +24,8 @@ public class dashboardController{
         vista.getMenuBusqueda().show(vista.getTxtPacientes(), 0, vista.getTxtPacientes().getHeight());
     }
     
+    public static void crearConsulta(){ 
+    }
+    
     
 }

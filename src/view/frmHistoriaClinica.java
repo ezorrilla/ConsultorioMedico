@@ -64,6 +64,11 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
         jLabel1.setText("Sangre");
 
         cboSangre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A-", "A+", "AB-", "AB+", "B-", "B+", "O-", "O+" }));
+        cboSangre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboSangreActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("VIH");
 
@@ -222,6 +227,10 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnCerrarActionPerformed
 
+    private void cboSangreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboSangreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboSangreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -290,7 +299,6 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox<String> cboSangre;
