@@ -72,7 +72,8 @@ public class frmDashboard extends javax.swing.JFrame {
 
         pnlBusqueda.setPreferredSize(new java.awt.Dimension(238, 144));
 
-        lstPacientes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jScrollPane1.setBorder(null);
+
         lstPacientes.setVisibleRowCount(5);
         lstPacientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,6 +119,7 @@ public class frmDashboard extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Pacientes");
 
+        txtPacientes.setBorder(null);
         txtPacientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPacientesActionPerformed(evt);
