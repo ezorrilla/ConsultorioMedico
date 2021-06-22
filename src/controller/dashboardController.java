@@ -2,6 +2,7 @@
 package controller;
 
 import javax.swing.DefaultListModel;
+import model.Paciente;
 import view.frmDashboard;
 
 public class dashboardController{
@@ -17,7 +18,7 @@ public class dashboardController{
         String texto = vista.getTxtPacientes().getText();
         DefaultListModel demoList = new DefaultListModel();
         
-        for (var p : daoPaciente.buscarNombres(texto)) {
+        for (Paciente p : daoPaciente.buscarNombres(texto)) {
             demoList.addElement(p.getApellido_pac() + " " + p.getNombre_pac());
         }
         vista.getLstPacientes().setModel(demoList);
