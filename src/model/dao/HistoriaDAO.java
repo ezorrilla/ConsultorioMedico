@@ -23,6 +23,7 @@ public class HistoriaDAO {
                     " h.cod_pac," +
                     " h.fecha_his," +
                     " p.apellido_pac," +
+                    " p.nombre_pac," +
                     " h.sangre," +
                     " h.VIH," +
                     " h.alergias," +
@@ -49,6 +50,7 @@ public class HistoriaDAO {
                     historia.setFecha_his(new SimpleDateFormat("dd-MM-yyyy").parse(rs.getString("fecha_his")));
                 }catch(ParseException e){ } 
                 historia.setApellido_pac(rs.getString("apellido_pac"));
+                historia.setNombre_pac(rs.getString("nombre_pac"));
                 historia.setSangre(rs.getString("sangre"));
                 historia.setVIH(rs.getString("VIH"));
                 historia.setAlergias(rs.getString("alergias"));

@@ -14,15 +14,19 @@ public class dashboardController{
     public static void reiniciado () { vista = new frmDashboard(); }
     public static void ocultar () { vista.setVisible(false);} 
     
-    public static void buscarPaciente(){
-        String texto = vista.getTxtPacientes().getText();
-        DefaultListModel demoList = new DefaultListModel();
-        
-        for (Paciente p : daoPaciente.buscarNombres(texto)) {
-            demoList.addElement(p.getApellido_pac() + " " + p.getNombre_pac());
-        }
-        vista.getLstPacientes().setModel(demoList);
-        vista.getMenuBusqueda().show(vista.getTxtPacientes(), 0, vista.getTxtPacientes().getHeight());
+    public static void buscarPaciente(){        
+        new Thread(){ @Override public void run(){ Principal.showLoading();
+            
+            String texto = vista.getTxtPacientes().getText();
+            DefaultListModel demoList = new DefaultListModel();
+
+            for (Paciente p : daoPaciente.buscarNombres(texto)) {
+                demoList.addElement(p.getApellido_pac() + " " + p.getNombre_pac());
+            }
+            vista.getLstPacientes().setModel(demoList);
+            vista.getMenuBusqueda().show(vista.getTxtPacientes(), 0, vista.getTxtPacientes().getHeight());
+           
+        Principal.hideLoading();}}.start();
     }
     
     public static void crearConsulta(){ 
