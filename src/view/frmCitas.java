@@ -38,10 +38,8 @@ public class frmCitas extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jTextField9 = new javax.swing.JTextField();
-        jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
         jLabel14 = new javax.swing.JLabel();
@@ -68,12 +66,12 @@ public class frmCitas extends javax.swing.JFrame {
         jLabel13.setText("HORA");
         jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, -1, -1));
         jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 150, -1));
-        jPanel4.add(txtNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 120, -1));
+        jPanel4.add(txtNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 120, -1));
         jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 290, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel12.setText("SEXO");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 100, -1, -1));
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 100, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel15.setText("TELEFONO");
@@ -85,8 +83,8 @@ public class frmCitas extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel17.setText("F. NACIMIENTO");
-        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, -1, -1));
-        jPanel4.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 150, -1));
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, -1, -1));
+        jPanel4.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 150, -1));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel18.setText("AREA");
@@ -98,30 +96,24 @@ public class frmCitas extends javax.swing.JFrame {
         jPanel4.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 290, -1));
 
         jToggleButton1.setText("CANCELAR");
-        jPanel4.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, -1, -1));
-
-        jToggleButton2.setText("SIGUIENTE");
-        jPanel4.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, -1, -1));
+        jPanel4.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 490, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DNI", "CARNET EXTRANJERIA", "PASAPORTE" }));
         jPanel4.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
         jPanel4.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 760, 130));
 
-        jToggleButton3.setText("ACEPTAR");
-        jPanel4.add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, -1, -1));
-
         jToggleButton4.setText("BUSCAR");
-        jPanel4.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 490, -1, -1));
+        jPanel4.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, -1));
 
-        jToggleButton5.setText("GUARDAR");
-        jPanel4.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, -1, -1));
+        jToggleButton5.setText("AGENDAR");
+        jPanel4.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel14.setText("APELLIDO");
         jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MASCULINO", "FEMENINO" }));
-        jPanel4.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 100, -1, -1));
+        jPanel4.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 100, -1, -1));
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Symbol", 0, 12)); // NOI18N
         jLabel22.setText("DIRECCIÓN");
@@ -230,8 +222,6 @@ public class frmCitas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JTextField txtDni;
