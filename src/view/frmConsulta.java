@@ -44,7 +44,7 @@ public class frmConsulta extends javax.swing.JFrame {
         jLabel1.setText("Consultas Médicas");
 
         jLabel2.setFont(new java.awt.Font("Rubik", 0, 12)); // NOI18N
-        jLabel2.setText("Consultas pendientes:");
+        jLabel2.setText("Citas pendientes:");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
