@@ -7,12 +7,12 @@ import javax.swing.JLabel;
 public class Principal {    
     public static JFrame loading = new JFrame();
     public static void main (String[] args){   
-        initialize();
-        dashboardController.mostrar();
+        inicializar();
+        loginController.mostrar();
     }
     
-    private static void initialize(){
-        javax.swing.ImageIcon img = new javax.swing.ImageIcon("src/assets/ld4.gif");        
+    private static void inicializar(){
+        javax.swing.ImageIcon img = new javax.swing.ImageIcon("src/assets/ld2.gif");        
         JLabel thumb = new JLabel();
         thumb.setIcon(img);
         thumb.setOpaque(false);

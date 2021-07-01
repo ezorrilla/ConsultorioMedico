@@ -15,14 +15,18 @@ public class loginController {
     public static void ocultar () { vista.setVisible(false);} 
     
     public static void sigIn(){
-        Usuario usuario = dao.login(vista.getTxtUsuario().getText(), new String(vista.getTxtContrasena().getPassword()) );
+        new Thread(){ @Override public void run(){ Principal.showLoading();
+            
+            Usuario usuario = dao.login(vista.getTxtUsuario().getText(), new String(vista.getTxtContrasena().getPassword()) );
+
+            if (usuario.getNum_usu() > 0) {
+                JOptionPane.showMessageDialog(vista, "Bienvenido " + usuario.getNombre_usu() );
+                dashboardController.mostrar();
+                ocultar();
+            } else {
+                JOptionPane.showMessageDialog(vista, "Usuario o contraseña inválido.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         
-        if (usuario.getNum_usu() > 0) {
-            JOptionPane.showMessageDialog(vista, "Bienvenido " + usuario.getNombre_usu() );
-            dashboardController.mostrar();
-            ocultar();
-        } else {
-            JOptionPane.showMessageDialog(vista, "Usuario o contraseña inválido.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        Principal.hideLoading();}}.start();
     }
 }

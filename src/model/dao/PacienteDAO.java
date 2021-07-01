@@ -24,7 +24,7 @@ public class PacienteDAO{
             
             while(rs.next()){
                 Paciente p = new Paciente();
-                p.setCod_pac(Integer.parseInt(rs.getString("cod_pac")));
+                p.setCod_pac(rs.getInt("cod_pac"));
                 p.setNombre_pac(rs.getString("nombre_pac"));
                 p.setApellido_pac(rs.getString("apellido_pac"));
                 pacientes.add(p);

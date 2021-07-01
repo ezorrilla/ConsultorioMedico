@@ -33,4 +33,34 @@ public class ConsultaDAO {
         }
         return p;
     }
+    
+    public List<Paciente> ultimosPacientesAtendidos(){
+        String sql ="SELECT c.cod_cons, paci.cod_pac, " +
+                    "   paci.nombre_pac," +
+                    "   paci.apellido_pac," +
+                    "   s.nomb_serv," +
+                    "   c.fecha " +
+                    " FROM  consulta c " +
+                    " INNER JOIN paciente paci " +
+                    "   ON c.cod_pac=paci.cod_pac " +
+                    " INNER JOIN servicio s " +
+                    "   ON  s.cod_serv=c.cod_serv " +
+                    " AND c.estado='Atendido' ORDER BY cod_cons DESC limit 5";
+        List<Paciente> pacientes = new ArrayList<>();
+        try{
+            ps = mysqlConnect.connect().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Paciente p = new Paciente();
+                p.setCod_pac(rs.getInt("cod_pac"));
+                p.setNombre_pac(rs.getString("nombre_pac"));
+                p.setApellido_pac(rs.getString("apellido_pac"));
+                pacientes.add(p);
+            }
+        } catch(SQLException e){}
+        finally{
+             mysqlConnect.disconnect();
+        }
+        return pacientes;
+    }
 }
