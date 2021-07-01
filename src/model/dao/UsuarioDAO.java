@@ -39,5 +39,5 @@ public class UsuarioDAO {
             mysqlConnect.disconnect();
         }
         return u;
-    } 
+    }
 }

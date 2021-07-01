@@ -5,6 +5,7 @@ import controller.ConsultaController;
 import controller.NuevaConsultaController;
 import controller.dashboardController;
 import controller.historiaClinicaController;
+import controller.loginController;
 import java.awt.Rectangle;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -33,17 +34,18 @@ public class frmDashboard extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txtPacientes = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
+        lblPerfil = new javax.swing.JLabel();
+        lblSalir = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblPacientes = new javax.swing.JLabel();
+        lblConfiguracion = new javax.swing.JLabel();
+        lblPagos = new javax.swing.JLabel();
+        lblConsultas = new javax.swing.JLabel();
+        lblUsuarios = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -126,9 +128,9 @@ public class frmDashboard extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_caduceus_25px_1.png"))); // NOI18N
         jLabel2.setText("Consultorio Médico");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Admin EZorrilla");
+        lblUsuario.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuario.setText("Elder Zorrilla");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,13 +152,29 @@ public class frmDashboard extends javax.swing.JFrame {
             }
         });
 
+        lblPerfil.setFont(new java.awt.Font("Segoe UI Semilight", 0, 12)); // NOI18N
+        lblPerfil.setForeground(new java.awt.Color(255, 255, 255));
+        lblPerfil.setText("Administrador");
+
+        lblSalir.setBackground(new java.awt.Color(255, 255, 255));
+        lblSalir.setForeground(new java.awt.Color(255, 255, 255));
+        lblSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_shutdown_25px_1.png"))); // NOI18N
+        lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSalirMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addGap(18, 18, 18)
                 .addComponent(txtPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,125 +183,121 @@ public class frmDashboard extends javax.swing.JFrame {
                 .addGap(108, 108, 108)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPerfil))
+                .addGap(18, 18, 18)
+                .addComponent(lblSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblSalir, javax.swing.GroupLayout.Alignment.LEADING)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(lblPerfil)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(49, 58, 73));
 
-        jLabel3.setBackground(new java.awt.Color(49, 58, 73));
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_headache_25px.png"))); // NOI18N
-        jLabel3.setText("Pacientes");
-        jLabel3.setBorder(new EmptyBorder(0,10,0,0));
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.setOpaque(true);
+        lblPacientes.setBackground(new java.awt.Color(49, 58, 73));
+        lblPacientes.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        lblPacientes.setForeground(new java.awt.Color(255, 255, 255));
+        lblPacientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblPacientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_headache_25px.png"))); // NOI18N
+        lblPacientes.setText("Pacientes");
+        lblPacientes.setBorder(new EmptyBorder(0,10,0,0));
+        lblPacientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPacientes.setOpaque(true);
 
-        jLabel4.setBackground(new java.awt.Color(39, 45, 57));
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_dashboard_25px.png"))); // NOI18N
-        jLabel4.setText("Dashboard");
-        jLabel4.setBorder(new EmptyBorder(0,10,0,0));
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.setOpaque(true);
+        lblConfiguracion.setBackground(new java.awt.Color(39, 45, 57));
+        lblConfiguracion.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12)); // NOI18N
+        lblConfiguracion.setForeground(new java.awt.Color(255, 255, 255));
+        lblConfiguracion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblConfiguracion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_automatic_25px_1.png"))); // NOI18N
+        lblConfiguracion.setText("Configuración");
+        lblConfiguracion.setBorder(new EmptyBorder(0,10,0,0));
+        lblConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblConfiguracion.setOpaque(true);
 
-        jLabel5.setBackground(new java.awt.Color(39, 45, 57));
-        jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_automatic_25px_1.png"))); // NOI18N
-        jLabel5.setText("Configuración");
-        jLabel5.setBorder(new EmptyBorder(0,10,0,0));
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel5.setOpaque(true);
+        lblPagos.setBackground(new java.awt.Color(49, 58, 73));
+        lblPagos.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        lblPagos.setForeground(new java.awt.Color(255, 255, 255));
+        lblPagos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblPagos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_pos_terminal_25px.png"))); // NOI18N
+        lblPagos.setText("Pagos");
+        lblPagos.setBorder(new EmptyBorder(0,10,0,0));
+        lblPagos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblPagos.setOpaque(true);
 
-        jLabel6.setBackground(new java.awt.Color(49, 58, 73));
-        jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_pos_terminal_25px.png"))); // NOI18N
-        jLabel6.setText("Caja");
-        jLabel6.setBorder(new EmptyBorder(0,10,0,0));
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel6.setOpaque(true);
-
-        jLabel7.setBackground(new java.awt.Color(39, 45, 57));
-        jLabel7.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_organ_transplantation_25px.png"))); // NOI18N
-        jLabel7.setText("Consultas");
-        jLabel7.setBorder(new EmptyBorder(0,10,0,0));
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel7.setOpaque(true);
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblConsultas.setBackground(new java.awt.Color(39, 45, 57));
+        lblConsultas.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        lblConsultas.setForeground(new java.awt.Color(255, 255, 255));
+        lblConsultas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_organ_transplantation_25px.png"))); // NOI18N
+        lblConsultas.setText("Consultas");
+        lblConsultas.setBorder(new EmptyBorder(0,10,0,0));
+        lblConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblConsultas.setOpaque(true);
+        lblConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
+                lblConsultasMouseClicked(evt);
             }
         });
 
-        jLabel8.setBackground(new java.awt.Color(39, 45, 57));
-        jLabel8.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_user_group_25px.png"))); // NOI18N
-        jLabel8.setText("Uruarios");
-        jLabel8.setBorder(new EmptyBorder(0,10,0,0));
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel8.setOpaque(true);
+        lblUsuarios.setBackground(new java.awt.Color(39, 45, 57));
+        lblUsuarios.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        lblUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_user_group_25px.png"))); // NOI18N
+        lblUsuarios.setText("Uruarios");
+        lblUsuarios.setBorder(new EmptyBorder(0,10,0,0));
+        lblUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblUsuarios.setOpaque(true);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblPacientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPagos, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(150, 150, 150)
+                .addComponent(lblPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblPagos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11))
         );
 
@@ -598,13 +612,19 @@ public class frmDashboard extends javax.swing.JFrame {
         historiaClinicaController.mostrarHistoriaPaciente(lstPacientes.getSelectedIndex()+1);
     }//GEN-LAST:event_lstPacientesMouseClicked
 
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+    private void lblConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConsultasMouseClicked
         ConsultaController.mostrar();
-    }//GEN-LAST:event_jLabel7MouseClicked
+    }//GEN-LAST:event_lblConsultasMouseClicked
 
     private void btnCrearCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCitaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCrearCitaActionPerformed
+
+    private void lblSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseClicked
+        loginController.reiniciado();
+        loginController.mostrar();
+        dashboardController.ocultar();
+    }//GEN-LAST:event_lblSalirMouseClicked
 
     public JList<String> getLstPacientes() {
         return lstPacientes;
@@ -620,6 +640,34 @@ public class frmDashboard extends javax.swing.JFrame {
 
     public JPanel getPnlUltimosPacientes() {
         return pnlUltimosPacientes;
+    }
+
+    public JLabel getLblPerfil() {
+        return lblPerfil;
+    }
+
+    public JLabel getLblUsuario() {
+        return lblUsuario;
+    }
+
+    public JLabel getLblConsultas() {
+        return lblConsultas;
+    }
+
+    public JLabel getLblConfiguracion() {
+        return lblConfiguracion;
+    }
+
+    public JLabel getLblPacientes() {
+        return lblPacientes;
+    }
+
+    public JLabel getLblPagos() {
+        return lblPagos;
+    }
+
+    public JLabel getLblUsuarios() {
+        return lblUsuarios;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -641,16 +689,9 @@ public class frmDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -665,6 +706,14 @@ public class frmDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblConfiguracion;
+    private javax.swing.JLabel lblConsultas;
+    private javax.swing.JLabel lblPacientes;
+    private javax.swing.JLabel lblPagos;
+    private javax.swing.JLabel lblPerfil;
+    private javax.swing.JLabel lblSalir;
+    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblUsuarios;
     private javax.swing.JList<String> lstPacientes;
     private javax.swing.JPopupMenu menuBusqueda;
     private javax.swing.JPanel pnlAgenda;

@@ -21,7 +21,7 @@ public class dashboardController{
             
             String texto = vista.getTxtPacientes().getText();
             DefaultListModel demoList = new DefaultListModel();
-
+            
             for (Paciente p : daoPaciente.buscarNombres(texto)) {
                 demoList.addElement(p.getApellido_pac() + " " + p.getNombre_pac());
             }
@@ -32,7 +32,26 @@ public class dashboardController{
     }
     
     private static void inicializar(){
+        opcionesUsuario();
         listarUltimosPacientes();
+    }
+    
+    private static void opcionesUsuario(){    
+        vista.getLblPerfil().setText(Principal.usuario.getPerfil());
+        vista.getLblUsuario().setText(Principal.usuario.getNombre_usu() + " " + Principal.usuario.getApellido_usu());
+        
+        vista.getLblPacientes().setVisible(false);
+        vista.getLblConsultas().setVisible(false);
+        vista.getLblPagos().setVisible(false);
+        vista.getLblUsuarios().setVisible(false);
+        Principal.opciones.forEach((opc) -> {
+            switch (opc.getCod_opc()){
+                case 2 -> vista.getLblPacientes().setVisible(true);
+                case 4 -> vista.getLblConsultas().setVisible(true);
+                case 5 -> vista.getLblPagos().setVisible(true);
+                case 10 -> vista.getLblUsuarios().setVisible(true);
+            }
+        });
     }
     
     private static void listarUltimosPacientes(){        
@@ -66,9 +85,5 @@ public class dashboardController{
     public static void btnMVerMasActionPerformed(java.awt.event.ActionEvent evt){ 
         historiaClinicaController.mostrarHistoriaPaciente(Integer.parseInt(evt.getActionCommand()));
     }
-    
-    public static void crearConsulta(){ 
-    }
-    
-    
+
 }

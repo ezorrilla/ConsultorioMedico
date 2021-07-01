@@ -1,11 +1,17 @@
 
 package controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import model.Opcion;
+import model.Usuario;
 
 public class Principal {    
     public static JFrame loading = new JFrame();
+    public static Usuario usuario = new Usuario();
+    public static List<Opcion> opciones = new ArrayList<>();
     public static void main (String[] args){   
         inicializar();
         loginController.mostrar();

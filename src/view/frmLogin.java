@@ -57,6 +57,7 @@ public class frmLogin extends javax.swing.JFrame {
         txtContrasena = new javax.swing.JPasswordField();
         chkAgree = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
+        lblSalir = new javax.swing.JLabel();
         rightPanel = new javax.swing.JLabel();
         leftPanel = new javax.swing.JLabel();
 
@@ -118,6 +119,7 @@ public class frmLogin extends javax.swing.JFrame {
         chkAgree.setFont(new java.awt.Font("Berlin Sans FB", 0, 15)); // NOI18N
         chkAgree.setForeground(new java.awt.Color(255, 255, 255));
         chkAgree.setText("Mantener la sesión iniciada");
+        chkAgree.setOpaque(false);
         chkAgree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkAgreeActionPerformed(evt);
@@ -129,6 +131,19 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("BIENVENIDO");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 190, 50));
+
+        lblSalir.setBackground(new java.awt.Color(255, 255, 255));
+        lblSalir.setForeground(new java.awt.Color(255, 255, 255));
+        lblSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_enter_25px.png"))); // NOI18N
+        lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSalirMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lblSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 30, -1, -1));
 
         rightPanel.setBackground(new java.awt.Color(0, 0, 51));
         rightPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -154,6 +169,10 @@ public class frmLogin extends javax.swing.JFrame {
         loginController.sigIn();
     }//GEN-LAST:event_txtContrasenaActionPerformed
 
+    private void lblSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lblSalirMouseClicked
+
     public JPasswordField getTxtContrasena() {
         return txtContrasena;
     }
@@ -171,6 +190,7 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lblSalir;
     private javax.swing.JLabel leftPanel;
     private javax.swing.JLabel rightPanel;
     private javax.swing.JPasswordField txtContrasena;
