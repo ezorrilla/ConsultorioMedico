@@ -46,10 +46,10 @@ public class dashboardController{
         vista.getLblUsuarios().setVisible(false);
         Principal.opciones.forEach((opc) -> {
             switch (opc.getCod_opc()){
-                case 2 -> vista.getLblPacientes().setVisible(true);
-                case 4 -> vista.getLblConsultas().setVisible(true);
-                case 5 -> vista.getLblPagos().setVisible(true);
-                case 10 -> vista.getLblUsuarios().setVisible(true);
+                case 2 :vista.getLblPacientes().setVisible(true);
+                case 4 : vista.getLblConsultas().setVisible(true);
+                case 5 : vista.getLblPagos().setVisible(true);
+                case 10 : vista.getLblUsuarios().setVisible(true);
             }
         });
     }
