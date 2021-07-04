@@ -1,29 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/controller/ConsultaController.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>4</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/model/dao/ConsultaDAO.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/view/frmHistoriaClinica.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/model/Consulta.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/view/frmCitas.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/controller/dashboardController.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/model/MysqlConnect.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/controller/historiaClinicaController.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/model/Paciente.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/controller/NuevaConsultaController.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/controller/ConsultaController.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/controller/ld3.gif</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/controller/Principal.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/model/dao/HistoriaDAO.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/view/frmDashboard.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/model/dao/PacienteDAO.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/view/frmNuevaConsulta.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/controller/loginController.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/model/Historia.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/view/frmLogin.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/view/frmConsulta.java</file>
-            <file>file:/C:/Users/BS-PC/Documents/NetBeansProjects/ConsultorioMedico/src/model/dao/UsuarioDAO.java</file>
+            <file>file:/C:/Users/Jeff/Desktop/ConsultorioMedico/src/view/frmDashboard.java</file>
+            <file>file:/C:/Users/Jeff/Desktop/ConsultorioMedico/src/controller/NuevaConsultaController.java</file>
+            <file>file:/C:/Users/Jeff/Desktop/ConsultorioMedico/src/view/frmNuevaConsulta.java</file>
+            <file>file:/C:/Users/Jeff/Desktop/ConsultorioMedico/src/assets/ld1.gif</file>
+            <file>file:/C:/Users/Jeff/Desktop/ConsultorioMedico/src/controller/CrearCitaController.java</file>
         </group>
     </open-files>
 </project-private>
