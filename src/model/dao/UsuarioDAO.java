@@ -4,6 +4,8 @@ package model.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import model.MysqlConnect;
 import model.Usuario;
 
@@ -40,4 +42,33 @@ public class UsuarioDAO {
         }
         return u;
     }
+    
+    public List<Usuario> listarUsuarios (){
+        String sql = "SELECT u.*,p.perfil FROM usuarios u "+
+		     "INNER JOIN perfil p ON p.cod_perf=u.cod_perf ";
+        List<Usuario> usuarios = new ArrayList<>();
+        try {
+            ps = mysqlConnect.connect().prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                Usuario u = new Usuario();
+                u.setNum_usu(Integer.parseInt(rs.getString("num_usu")));
+                u.setNombre_usu(rs.getString("nombre_usu"));
+                u.setApellido_usu(rs.getString("apellido_usu"));
+                u.setDni_usu(rs.getString("dni_usu"));
+                u.setDni_usu(rs.getString("dni_usu"));
+                u.setCod_perf(rs.getString("cod_perf"));
+                u.setPerfil(rs.getString("perfil"));
+                u.setEstado(Integer.parseInt(rs.getString("estado")));
+                usuarios.add(u);
+            }
+            
+        } catch (SQLException e) {
+        } finally {
+            mysqlConnect.disconnect();
+        }
+        return usuarios;
+    }
+    
 }

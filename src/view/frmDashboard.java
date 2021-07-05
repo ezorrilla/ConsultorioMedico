@@ -6,6 +6,7 @@ import controller.NuevaConsultaController;
 import controller.dashboardController;
 import controller.historiaClinicaController;
 import controller.loginController;
+import controller.usuarioController;
 import java.awt.Rectangle;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -269,6 +270,11 @@ public class frmDashboard extends javax.swing.JFrame {
         lblUsuarios.setBorder(new EmptyBorder(0,10,0,0));
         lblUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblUsuarios.setOpaque(true);
+        lblUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblUsuariosMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -625,6 +631,10 @@ public class frmDashboard extends javax.swing.JFrame {
         loginController.mostrar();
         dashboardController.ocultar();
     }//GEN-LAST:event_lblSalirMouseClicked
+
+    private void lblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUsuariosMouseClicked
+        usuarioController.mostrar();
+    }//GEN-LAST:event_lblUsuariosMouseClicked
 
     public JList<String> getLstPacientes() {
         return lstPacientes;
