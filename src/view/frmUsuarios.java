@@ -44,7 +44,7 @@ public class frmUsuarios extends javax.swing.JFrame {
         txtApellidos = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         cboPerfil = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
+        lblContrasena = new javax.swing.JLabel();
         txtContrasena = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         cboEstado = new javax.swing.JComboBox<>();
@@ -154,7 +154,7 @@ public class frmUsuarios extends javax.swing.JFrame {
 
         jLabel6.setText("APELLIDOS:");
 
-        jLabel5.setText("CONTRASEÑA:");
+        lblContrasena.setText("CONTRASEÑA:");
 
         txtContrasena.setText("jPasswordField1");
 
@@ -173,7 +173,7 @@ public class frmUsuarios extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
+                    .addComponent(lblContrasena, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -218,7 +218,7 @@ public class frmUsuarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(lblContrasena))
                 .addContainerGap())
         );
 
@@ -394,7 +394,6 @@ public class frmUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
@@ -402,6 +401,7 @@ public class frmUsuarios extends javax.swing.JFrame {
     public javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane5;
+    public javax.swing.JLabel lblContrasena;
     public javax.swing.JTable tabla;
     public javax.swing.JTextField txtApellidos;
     public javax.swing.JPasswordField txtContrasena;

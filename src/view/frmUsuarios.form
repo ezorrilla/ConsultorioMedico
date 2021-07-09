@@ -251,7 +251,7 @@
                           <Component id="jLabel3" alignment="0" pref="112" max="32767" attributes="0"/>
                           <Component id="jLabel4" alignment="0" pref="112" max="32767" attributes="0"/>
                           <Component id="jLabel6" alignment="0" pref="112" max="32767" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" pref="112" max="32767" attributes="0"/>
+                          <Component id="lblContrasena" alignment="0" pref="112" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -308,7 +308,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtContrasena" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblContrasena" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -397,10 +397,13 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="lblContrasena">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CONTRASE&#xd1;A:"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtContrasena">
               <Properties>

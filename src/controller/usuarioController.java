@@ -97,6 +97,8 @@ public class usuarioController {
         if (fila == -1) {
             JOptionPane.showMessageDialog(vista, "Debe seleccionar una registro.", "Error", JOptionPane.CANCEL_OPTION);
         } else {          
+            vista.lblContrasena.setVisible(false);
+            vista.txtContrasena.setVisible(false);
             vista.txtId.setText(vista.tabla.getValueAt(fila, 0).toString());
             vista.txtNombres.setText((String) vista.tabla.getValueAt(fila, 1));
             vista.txtApellidos.setText((String) vista.tabla.getValueAt(fila, 2));
@@ -187,6 +189,8 @@ public class usuarioController {
         vista.txtDNI.setText("");
         vista.cboPerfil.setSelectedIndex(0);
         vista.cboEstado.setSelectedIndex(0);
+        vista.lblContrasena.setVisible(true);
+        vista.txtContrasena.setVisible(true);
         vista.txtContrasena.setText("");
         vista.txtNombres.requestFocus();
     }
