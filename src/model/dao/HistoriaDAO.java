@@ -83,7 +83,6 @@ public class HistoriaDAO {
             ps.setString(8,historia.getAntec_fami());
             ps.setDate(9, new java.sql.Date(Calendar.getInstance().getTime().getTime()));
             ps.setInt(10, historia.getCod_his());
-            ps.executeUpdate();
             
             return ps.executeUpdate();
         } catch (SQLException ex) {

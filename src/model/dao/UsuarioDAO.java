@@ -45,7 +45,7 @@ public class UsuarioDAO {
     
     public List<Usuario> listarUsuarios (){
         String sql = "SELECT u.*,p.perfil FROM usuarios u "+
-		     "INNER JOIN perfil p ON p.cod_perf=u.cod_perf ";
+		     "INNER JOIN perfil p ON p.cod_perf=u.cod_perf WHERE u.estado != 2";
         List<Usuario> usuarios = new ArrayList<>();
         try {
             ps = mysqlConnect.connect().prepareStatement(sql);
@@ -71,4 +71,78 @@ public class UsuarioDAO {
         return usuarios;
     }
     
+    public int registrar (Usuario usuario){
+        String sql = "INSERT INTO usuarios (nombre_usu, apellido_usu, dni_usu, pass, cod_perf, estado)" +
+                     " VALUES (?, ?, ?, ?, ?, ?)";
+        try {
+            ps = mysqlConnect.connect().prepareStatement(sql);
+            ps.setString(1, usuario.getNombre_usu());
+            ps.setString(2, usuario.getApellido_usu());
+            ps.setString(3, usuario.getDni_usu());
+            ps.setString(4, usuario.getPass());
+            ps.setString(5, usuario.getCod_perf());
+            ps.setInt(6, usuario.getEstado());
+            
+            return ps.executeUpdate();    
+        } catch (SQLException e) {
+        } finally {
+            mysqlConnect.disconnect();
+        }
+        return 0;
+    }
+    
+    public int actualizar (Usuario usuario){
+        String sql = "UPDATE usuarios SET " +
+                        "nombre_usu   = ?, " +
+                        "apellido_usu = ?, " +
+                        "dni_usu      = ?, " +
+                        "cod_perf     = ?, " +
+                        "estado       = ? " +
+                     "WHERE num_usu = ?";
+        try {
+            ps = mysqlConnect.connect().prepareStatement(sql);
+            ps.setString(1, usuario.getNombre_usu());
+            ps.setString(2, usuario.getApellido_usu());
+            ps.setString(3, usuario.getDni_usu());
+            ps.setString(4, usuario.getCod_perf());
+            ps.setInt(5, usuario.getEstado());
+            ps.setInt(6, usuario.getNum_usu());
+            
+            return ps.executeUpdate();    
+        } catch (SQLException e) {
+        } finally {
+            mysqlConnect.disconnect();
+        }
+        return 0;
+    }
+    
+    public int eliminar (int num_usu){
+        String sql = "UPDATE usuarios SET estado = 2 WHERE num_usu = " + num_usu;
+        try {
+            ps = mysqlConnect.connect().prepareStatement(sql);
+            
+            return ps.executeUpdate();    
+        } catch (SQLException e) {
+        } finally {
+            mysqlConnect.disconnect();
+        }
+        return 0;
+    }
+    
+    public int validarDNI (String dni){
+        String sql = "SELECT count(*) as exist FROM usuarios WHERE dni_usu = " + dni;
+        int cant = 0;
+        try {
+            ps = mysqlConnect.connect().prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                cant = rs.getInt("exist");
+            }
+            
+        } catch (SQLException e) {
+        } finally {
+            mysqlConnect.disconnect();
+        }
+        return cant;
+    }
 }

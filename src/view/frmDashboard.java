@@ -6,6 +6,7 @@ import controller.NuevaConsultaController;
 import controller.dashboardController;
 import controller.historiaClinicaController;
 import controller.loginController;
+import controller.realizarPagoController;
 import controller.usuarioController;
 import java.awt.Rectangle;
 import javax.swing.JButton;
@@ -245,6 +246,11 @@ public class frmDashboard extends javax.swing.JFrame {
         lblPagos.setBorder(new EmptyBorder(0,10,0,0));
         lblPagos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblPagos.setOpaque(true);
+        lblPagos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPagosMouseClicked(evt);
+            }
+        });
 
         lblConsultas.setBackground(new java.awt.Color(39, 45, 57));
         lblConsultas.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
@@ -635,6 +641,10 @@ public class frmDashboard extends javax.swing.JFrame {
     private void lblUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUsuariosMouseClicked
         usuarioController.mostrar();
     }//GEN-LAST:event_lblUsuariosMouseClicked
+
+    private void lblPagosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPagosMouseClicked
+        realizarPagoController.mostrar();
+    }//GEN-LAST:event_lblPagosMouseClicked
 
     public JList<String> getLstPacientes() {
         return lstPacientes;

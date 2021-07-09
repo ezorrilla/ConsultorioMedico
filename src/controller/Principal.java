@@ -30,11 +30,13 @@ public class Principal {
     }
     
     public static void showLoading(){
+        loading.setAlwaysOnTop(true);
         loading.setVisible(true);
         loading.setExtendedState( loading.getExtendedState()|JFrame.MAXIMIZED_BOTH );
     }
     
     public static void hideLoading(){
+        loading.setAlwaysOnTop(false);
         loading.setVisible(false);
     }
 }
