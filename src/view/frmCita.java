@@ -160,7 +160,7 @@ public class frmCita extends javax.swing.JFrame {
                 btnAgendarActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 70, 40));
+        jPanel4.add(btnAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 470, 70, 40));
 
         btnCerrar.setBackground(new java.awt.Color(255, 255, 255));
         btnCerrar.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
@@ -176,7 +176,7 @@ public class frmCita extends javax.swing.JFrame {
                 btnCerrarActionPerformed(evt);
             }
         });
-        jPanel4.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 70, 40));
+        jPanel4.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 70, 40));
 
         jLabel15.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(23, 100, 191));
@@ -253,7 +253,7 @@ public class frmCita extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
         );
 
         pack();
