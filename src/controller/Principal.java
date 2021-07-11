@@ -1,8 +1,10 @@
 
 package controller;
 
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import model.Opcion;
@@ -38,5 +40,10 @@ public class Principal {
     public static void hideLoading(){
         loading.setAlwaysOnTop(false);
         loading.setVisible(false);
+    }
+    
+    public static void setIcono(javax.swing.JFrame frame){
+        javax.swing.ImageIcon logo = new javax.swing.ImageIcon("src/assets/logo.png");  
+        frame.setIconImage(logo.getImage());
     }
 }

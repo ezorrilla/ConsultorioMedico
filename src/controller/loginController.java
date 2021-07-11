@@ -10,9 +10,13 @@ public class loginController {
     public static model.dao.UsuarioDAO daoUsu = new model.dao.UsuarioDAO();
     public static model.dao.OpcionDAO daoOpc = new model.dao.OpcionDAO();
     
-    public static void mostrar () { vista.setLocationRelativeTo(null); vista.setVisible(true);}
+    public static void mostrar () { vista.setLocationRelativeTo(null); vista.setVisible(true); inicializar();}
     public static void reiniciado () { vista = new frmLogin(); }
     public static void ocultar () { vista.setVisible(false);} 
+    
+    private static void inicializar(){
+        Principal.setIcono(vista);
+    }
     
     public static void sigIn(){
         new Thread(){ @Override public void run(){ Principal.showLoading();            

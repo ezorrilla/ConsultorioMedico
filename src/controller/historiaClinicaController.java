@@ -11,9 +11,13 @@ public class historiaClinicaController {
     public static frmHistoriaClinica vista = new frmHistoriaClinica();
     public static model.dao.HistoriaDAO dao = new model.dao.HistoriaDAO();
     
-    public static void mostrar () { vista.setLocationRelativeTo(null); vista.setVisible(true);}
+    public static void mostrar () { vista.setLocationRelativeTo(null); vista.setVisible(true); inicializar();}
     public static void reiniciado () { vista = new frmHistoriaClinica(); }
     public static void ocultar () { vista.setVisible(false);} 
+    
+    private static void inicializar(){
+        Principal.setIcono(vista);
+    }
     
     public static void mostrarHistoriaPaciente(int cod_pac){        
         new Thread(){ @Override public void run(){ Principal.showLoading();

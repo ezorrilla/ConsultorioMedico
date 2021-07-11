@@ -17,4 +17,12 @@ public class Functions {
             }
         }
     }
+    
+    public static String jComboSelectedKey(javax.swing.JComboBox cbo){
+        return ((util.ComboItem)cbo.getSelectedItem()).getKey();
+    }
+    
+    public static String jComboSelectedValue(javax.swing.JComboBox cbo){
+        return ((util.ComboItem)cbo.getSelectedItem()).getValue();
+    }
 }

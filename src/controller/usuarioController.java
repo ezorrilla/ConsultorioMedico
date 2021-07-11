@@ -24,6 +24,7 @@ public class usuarioController {
     public static void ocultar () { vista.setVisible(false);} 
     
     private static void inicializar(){
+        Principal.setIcono(vista);
         listarEstado();
         listarPerfiles();
         listarUsuarios();

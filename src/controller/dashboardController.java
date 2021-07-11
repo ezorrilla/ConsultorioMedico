@@ -16,25 +16,27 @@ public class dashboardController{
     public static void reiniciado () { vista = new frmDashboard(); }
     public static void ocultar () { vista.setVisible(false);} 
     
+    private static void inicializar(){
+        Principal.setIcono(vista);
+        opcionesUsuario();
+        listarUltimosPacientes();
+    }
+    
     public static void buscarPaciente(){
         new Thread(){ @Override public void run(){ Principal.showLoading();
             
             String texto = vista.getTxtPacientes().getText();
             DefaultListModel demoList = new DefaultListModel();
             
-            for (Paciente p : daoPaciente.buscarNombres(texto)) {
+            for (Paciente p : daoPaciente.buscarNombresDNI(texto)) {
                 demoList.addElement(p.getApellido_pac() + " " + p.getNombre_pac());
             }
+            Principal.hideLoading();
             vista.getLstPacientes().setModel(demoList);
             vista.getMenuBusqueda().show(vista.getTxtPacientes(), 0, vista.getTxtPacientes().getHeight());
-           
-        Principal.hideLoading();}}.start();
+        }}.start();
     }
     
-    private static void inicializar(){
-        opcionesUsuario();
-        listarUltimosPacientes();
-    }
     
     private static void opcionesUsuario(){    
         vista.getLblPerfil().setText(Principal.usuario.getPerfil());
