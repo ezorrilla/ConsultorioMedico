@@ -320,7 +320,7 @@ public class frmHistoriaClinica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
-    private javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox<String> cboSangre;
     private javax.swing.JComboBox<String> cboVIH;
     private javax.swing.JLabel jLabel1;

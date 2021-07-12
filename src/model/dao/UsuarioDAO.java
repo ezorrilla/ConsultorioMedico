@@ -30,7 +30,6 @@ public class UsuarioDAO {
                 u.setNombre_usu(rs.getString("nombre_usu"));
                 u.setApellido_usu(rs.getString("apellido_usu"));
                 u.setDni_usu(rs.getString("dni_usu"));
-                u.setDni_usu(rs.getString("dni_usu"));
                 u.setCod_perf(rs.getString("cod_perf"));
                 u.setPerfil(rs.getString("perfil"));
                 u.setEstado(Integer.parseInt(rs.getString("estado")));
@@ -56,7 +55,6 @@ public class UsuarioDAO {
                 u.setNum_usu(Integer.parseInt(rs.getString("num_usu")));
                 u.setNombre_usu(rs.getString("nombre_usu"));
                 u.setApellido_usu(rs.getString("apellido_usu"));
-                u.setDni_usu(rs.getString("dni_usu"));
                 u.setDni_usu(rs.getString("dni_usu"));
                 u.setCod_perf(rs.getString("cod_perf"));
                 u.setPerfil(rs.getString("perfil"));
@@ -144,5 +142,26 @@ public class UsuarioDAO {
             mysqlConnect.disconnect();
         }
         return cant;
+    }
+    
+    public int guardarConfiguracion (Usuario usuario){
+        String sql = "UPDATE usuarios SET " +
+                        " nombre_usu   = ? " +
+                        ",apellido_usu = ? " +
+                        (!usuario.getPass().isEmpty() ? ",pass = ? ":" ") +
+                     "WHERE num_usu = " + usuario.getNum_usu();
+        try {
+            ps = mysqlConnect.connect().prepareStatement(sql);
+            ps.setString(1, usuario.getNombre_usu());
+            ps.setString(2, usuario.getApellido_usu());
+            if(!usuario.getPass().isEmpty())
+                ps.setString(3, usuario.getPass());
+            
+            return ps.executeUpdate();    
+        } catch (SQLException e) {
+        } finally {
+            mysqlConnect.disconnect();
+        }
+        return 0;
     }
 }

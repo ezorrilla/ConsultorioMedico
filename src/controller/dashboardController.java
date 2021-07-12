@@ -26,10 +26,10 @@ public class dashboardController{
         new Thread(){ @Override public void run(){ Principal.showLoading();
             
             String texto = vista.getTxtPacientes().getText();
-            DefaultListModel demoList = new DefaultListModel();
+            DefaultListModel demoList = new DefaultListModel();     
             
-            for (Paciente p : daoPaciente.buscarNombresDNI(texto)) {
-                demoList.addElement(p.getApellido_pac() + " " + p.getNombre_pac());
+            for (model.Paciente p : new model.dao.PacienteDAO().buscarNombresDNI(texto)) {
+                demoList.addElement(new util.ComboItem(p.getNombre_pac()+" "+p.getApellido_pac(), ""+ p.getCod_pac()));
             }
             Principal.hideLoading();
             vista.getLstPacientes().setModel(demoList);
@@ -43,15 +43,17 @@ public class dashboardController{
         vista.getLblUsuario().setText(Principal.usuario.getNombre_usu() + " " + Principal.usuario.getApellido_usu());
         
         vista.getLblPacientes().setVisible(false);
+        vista.getBtnBuscar().setVisible(false);
         vista.getLblConsultas().setVisible(false);
         vista.getLblPagos().setVisible(false);
         vista.getLblUsuarios().setVisible(false);
         Principal.opciones.forEach((opc) -> {
             switch (opc.getCod_opc()){
-                case 2 :vista.getLblPacientes().setVisible(true);
-                case 4 : vista.getLblConsultas().setVisible(true);
-                case 5 : vista.getLblPagos().setVisible(true);
-                case 10 : vista.getLblUsuarios().setVisible(true);
+                case 2 :vista.getLblPacientes().setVisible(true);break;
+                case 3 : vista.getBtnBuscar().setVisible(true);break;
+                case 4 : vista.getLblConsultas().setVisible(true);break;
+                case 5 : vista.getLblPagos().setVisible(true);break;
+                case 10 : vista.getLblUsuarios().setVisible(true);break;
             }
         });
     }

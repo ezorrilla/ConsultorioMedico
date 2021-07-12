@@ -54,6 +54,8 @@ public class frmUsuarios extends javax.swing.JFrame {
         btnDelete = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/edit.png"))); // NOI18N
         btnEditar.setText("EDITAR");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -70,6 +72,7 @@ public class frmUsuarios extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Detalle"));
 
         tabla = new javax.swing.JTable(){

@@ -17,6 +17,17 @@ public class historiaClinicaController {
     
     private static void inicializar(){
         Principal.setIcono(vista);
+        ponerPermisos();
+    }
+    
+    private static void ponerPermisos(){
+        
+        vista.btnGuardar.setEnabled(false);
+        Principal.opciones.forEach((opc) -> {
+            switch (opc.getCod_opc()){
+                case 6 :vista.btnGuardar.setEnabled(true); break;
+            }
+        });
     }
     
     public static void mostrarHistoriaPaciente(int cod_pac){        
@@ -51,13 +62,14 @@ public class historiaClinicaController {
             historia.setAlergia_medic(vista.getTxpAlergiasMedic().getText());
             historia.setAntec_fami(vista.getTxpAntecedentes().getText());
             historia.setMedicamentos(vista.getTxpUsoMedicamentos().getText());
-
+            
+            Principal.hideLoading();
             if (dao.actualizarHistoriaClinica(historia) == 1) {
                 JOptionPane.showMessageDialog(vista, "Historia Clínica actualizada con éxito.");
             } else {
                 JOptionPane.showMessageDialog(vista, "No se pudo actualizar.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         
-        Principal.hideLoading();}}.start();
+        }}.start();
     }
 }
