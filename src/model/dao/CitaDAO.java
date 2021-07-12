@@ -109,7 +109,8 @@ public class CitaDAO {
                      "INNER JOIN servicio s ON s.cod_serv=c.cod_serv and a.cod_area=s.cod_area " +
                      "INNER JOIN medico m ON m.cod_med=c.cod_med " +
                      "WHERE s.tipo_serv = 'Consulta' AND CONCAT(apellido_pac ,' ', nombre_pac) LIKE '%" + texto + "%' " +
-                       " AND DATE(c.dia_cita) >= CURDATE()"; 
+                       " AND DATE(c.dia_cita) >= CURDATE()" +
+                     " AND c.cod_cita NOT IN (SELECT pa.cod_transac FROM pago pa WHERE pa.cod_transac=c.cod_cita AND pa.tipo_tran='Consulta')"; 
         List<Cita> citas = new ArrayList<>();
         try {
             ps = mysqlConnect.connect().prepareStatement(sql);

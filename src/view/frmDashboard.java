@@ -439,7 +439,7 @@ public class frmDashboard extends javax.swing.JFrame {
         jLabel14.setBorder(new EmptyBorder(0,10,0,0));
         jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel14.setOpaque(true);
-        pnlAgenda.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 70, 20));
+        pnlAgenda.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 380, 200));
 
         jPanel4.add(pnlAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 420, 270));
 

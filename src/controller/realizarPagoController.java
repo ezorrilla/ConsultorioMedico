@@ -159,7 +159,7 @@ public class realizarPagoController {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(vista, "No se pudo realizar el pago.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-            
+            nuevo();
         }}.start();
     }
     
@@ -178,6 +178,7 @@ public class realizarPagoController {
             i = i - 1;
         }
         vista.txtTotal.setText("S/ 0.0");
+        buscarCitas();
     }
     
     private static void limpiarTabla() {
