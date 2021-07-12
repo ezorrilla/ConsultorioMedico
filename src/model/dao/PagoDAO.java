@@ -15,18 +15,20 @@ public class PagoDAO {
     MysqlConnect mysqlConnect = new MysqlConnect();
     
     public int registrar (Pago pago){
-        String sql = "INSERT INTO pago (cod_cita, cod_exa, tipo_tran, cod_transac, fecha_pago, monto, estado, usu_pago)" +
-                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO pago (cod_serv, cod_pac, tipo_tran, cod_transac, fecha_crea, fecha_pago, monto, estado, usu_crea, usu_pago)" +
+                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try {
             ps = mysqlConnect.connect().prepareStatement(sql);
-            ps.setInt(1, pago.getCod_cita());
-            ps.setInt(2, pago.getCod_exa());
+            ps.setInt(1, pago.getCod_serv());
+            ps.setInt(2, pago.getCod_pac());
             ps.setString(3, pago.getTipo_tran());
             ps.setInt(4, pago.getCod_transac());
-            ps.setString(5, pago.getFecha_pago());
-            ps.setDouble(6, pago.getMonto());
-            ps.setString(7, pago.getEstado());
-            ps.setInt(8, pago.getUsu_pago());
+            ps.setString(5, pago.getFecha_crea());
+            ps.setString(6, pago.getFecha_pago());
+            ps.setDouble(7, pago.getMonto());
+            ps.setString(8, pago.getEstado());
+            ps.setInt(9, pago.getUsu_crea());
+            ps.setInt(10, pago.getUsu_pago());
             
             return ps.executeUpdate();    
         } catch (SQLException e) {

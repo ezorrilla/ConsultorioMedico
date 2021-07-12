@@ -8,8 +8,8 @@ package model;
 public class Pago {
     
     private int cod_pago;
-    private int cod_cita;
-    private int cod_exa;
+    private int cod_serv;
+    private int cod_pac;
     private String tipo_tran;
     private int cod_transac;
     private String fecha_crea;
@@ -27,20 +27,20 @@ public class Pago {
         this.cod_pago = cod_pago;
     }
 
-    public int getCod_cita() {
-        return cod_cita;
+    public int getCod_serv() {
+        return cod_serv;
     }
 
-    public void setCod_cita(int cod_cita) {
-        this.cod_cita = cod_cita;
+    public void setCod_serv(int cod_serv) {
+        this.cod_serv = cod_serv;
     }
 
-    public int getCod_exa() {
-        return cod_exa;
+    public int getCod_pac() {
+        return cod_pac;
     }
 
-    public void setCod_exa(int cod_exa) {
-        this.cod_exa = cod_exa;
+    public void setCod_pac(int cod_pac) {
+        this.cod_pac = cod_pac;
     }
 
     public String getTipo_tran() {

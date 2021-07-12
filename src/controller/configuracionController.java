@@ -2,7 +2,6 @@
 package controller;
 
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import model.Usuario;
 import view.frmConfiguracion;
 
@@ -10,8 +9,6 @@ public class configuracionController {
     
     public static frmConfiguracion vista = new frmConfiguracion();
     public static model.dao.UsuarioDAO daoUsuario = new model.dao.UsuarioDAO();
-    public static model.dao.PerfilDAO daoPerfil = new model.dao.PerfilDAO();
-    public static DefaultTableModel modelo = new DefaultTableModel();
     
     public static void mostrar () { reiniciado(); vista.setLocationRelativeTo(null); vista.setVisible(true); inicializar();}
     public static void reiniciado () { vista = new frmConfiguracion(); }

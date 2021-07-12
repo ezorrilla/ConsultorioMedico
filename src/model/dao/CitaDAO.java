@@ -108,7 +108,8 @@ public class CitaDAO {
                      "INNER JOIN area a ON a.cod_area=c.cod_area " +
                      "INNER JOIN servicio s ON s.cod_serv=c.cod_serv and a.cod_area=s.cod_area " +
                      "INNER JOIN medico m ON m.cod_med=c.cod_med " +
-                     "WHERE s.tipo_serv = 'Consulta' AND CONCAT(apellido_pac ,' ', nombre_pac) LIKE '%" + texto + "%'"; 
+                     "WHERE s.tipo_serv = 'Consulta' AND CONCAT(apellido_pac ,' ', nombre_pac) LIKE '%" + texto + "%' " +
+                       " AND DATE(c.dia_cita) >= CURDATE()"; 
         List<Cita> citas = new ArrayList<>();
         try {
             ps = mysqlConnect.connect().prepareStatement(sql);

@@ -23,7 +23,6 @@ public class frmRealizarPago extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnLimpiar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -35,47 +34,59 @@ public class frmRealizarPago extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
         txtBuscar = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         cmbBusc = new javax.swing.JComboBox();
-        btnAgregarCita = new javax.swing.JButton();
-        btnCrearCita = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         pnlExamenes = new javax.swing.JPanel();
         btnSolicitarExamen = new javax.swing.JButton();
         btnAgregarExamen = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         btnPagar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        btnNuevo = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        btnCrearCita = new javax.swing.JButton();
+        btnQuitar1 = new javax.swing.JButton();
+        btnAgregarCita = new javax.swing.JButton();
+
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnLimpiar.setText("Nuevo");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
-            }
-        });
-
+        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalir.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(51, 0, 255));
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_enter_25px.png"))); // NOI18N
         btnSalir.setText("Salir");
+        btnSalir.setToolTipText("");
+        btnSalir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnSalir.setBorderPainted(false);
+        btnSalir.setFocusCycleRoot(true);
+        btnSalir.setFocusPainted(false);
+        btnSalir.setOpaque(false);
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 560, 89, 40));
 
         jLabel9.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
         jLabel9.setText("Fecha");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, 53, 20));
 
         tblServicios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "COD SERVICIO", "PACIENTE", "SERVICIO", "COSTO"
+                "cod_transac", "tipo_tran", "COD. SERVICIO", "SERVICIO", "cod_pac", "PACIENTE", "COSTO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -84,13 +95,29 @@ public class frmRealizarPago extends javax.swing.JFrame {
         });
         tblServicios.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblServicios);
+        if (tblServicios.getColumnModel().getColumnCount() > 0) {
+            tblServicios.getColumnModel().getColumn(0).setPreferredWidth(5);
+            tblServicios.getColumnModel().getColumn(1).setPreferredWidth(5);
+            tblServicios.getColumnModel().getColumn(2).setResizable(false);
+            tblServicios.getColumnModel().getColumn(4).setPreferredWidth(15);
+        }
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 790, 180));
 
         jLabel1.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
         jLabel1.setText("TOTAL");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, -1, 36));
 
+        txtTotal.setBackground(new java.awt.Color(255, 255, 51));
+        txtTotal.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtTotal.setToolTipText("");
+        txtTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtTotal.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPanel1.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, 123, 36));
 
         pnlCitas.setBackground(new java.awt.Color(255, 255, 255));
+        pnlCitas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tabla = new javax.swing.JTable(){
             public boolean isCellEditable(int fila,int col){
@@ -103,11 +130,11 @@ public class frmRealizarPago extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Cod Servicio", "Paciente", "Médico", "Servicio", "Fecha", "Costo"
+                "cod_cita", "Cod. Servicio", "Servicio", "cod_pac", "Paciente", "Médico", "Fecha Cita", "Costo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -120,100 +147,51 @@ public class frmRealizarPago extends javax.swing.JFrame {
         tabla.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(tabla);
         if (tabla.getColumnModel().getColumnCount() > 0) {
-            tabla.getColumnModel().getColumn(0).setPreferredWidth(45);
-            tabla.getColumnModel().getColumn(4).setPreferredWidth(60);
-            tabla.getColumnModel().getColumn(5).setPreferredWidth(40);
+            tabla.getColumnModel().getColumn(0).setPreferredWidth(20);
+            tabla.getColumnModel().getColumn(1).setPreferredWidth(20);
+            tabla.getColumnModel().getColumn(3).setPreferredWidth(15);
+            tabla.getColumnModel().getColumn(6).setPreferredWidth(100);
+            tabla.getColumnModel().getColumn(7).setPreferredWidth(20);
         }
 
+        pnlCitas.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 788, 150));
+
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarActionPerformed(evt);
+            }
+        });
         txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtBuscarKeyReleased(evt);
             }
         });
-
-        jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
-        jLabel2.setText("Buscar:");
+        pnlCitas.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 356, 30));
 
         cmbBusc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Paciente", "Medico" }));
+        pnlCitas.add(cmbBusc, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 91, 30));
 
-        btnAgregarCita.setBackground(new java.awt.Color(0, 0, 255));
-        btnAgregarCita.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        btnAgregarCita.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregarCita.setText("Agregar");
-        btnAgregarCita.setToolTipText("");
-        btnAgregarCita.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnAgregarCita.setBorderPainted(false);
-        btnAgregarCita.setFocusCycleRoot(true);
-        btnAgregarCita.setFocusPainted(false);
-        btnAgregarCita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarCitaActionPerformed(evt);
-            }
-        });
-
-        btnCrearCita.setBackground(new java.awt.Color(255, 255, 255));
-        btnCrearCita.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        btnCrearCita.setForeground(new java.awt.Color(51, 0, 255));
-        btnCrearCita.setText("Crear Cita");
-        btnCrearCita.setToolTipText("");
-        btnCrearCita.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnCrearCita.setBorderPainted(false);
-        btnCrearCita.setFocusCycleRoot(true);
-        btnCrearCita.setFocusPainted(false);
-        btnCrearCita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrearCitaActionPerformed(evt);
-            }
-        });
-
+        btnBuscar.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscar.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(51, 0, 255));
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_find_user_male_25px.png"))); // NOI18N
         btnBuscar.setText("Buscar");
+        btnBuscar.setToolTipText("");
+        btnBuscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnBuscar.setBorderPainted(false);
+        btnBuscar.setFocusCycleRoot(true);
+        btnBuscar.setFocusPainted(false);
+        btnBuscar.setOpaque(false);
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
+        pnlCitas.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 89, 38));
 
-        javax.swing.GroupLayout pnlCitasLayout = new javax.swing.GroupLayout(pnlCitas);
-        pnlCitas.setLayout(pnlCitasLayout);
-        pnlCitasLayout.setHorizontalGroup(
-            pnlCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlCitasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlCitasLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(4, 4, 4)
-                        .addComponent(cmbBusc, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscar)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCitasLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnCrearCita, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAgregarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
-        );
-        pnlCitasLayout.setVerticalGroup(
-            pnlCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCitasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbBusc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCrearCita, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        jLabel4.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        jLabel4.setText("Buscar:");
+        pnlCitas.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
 
         jTabbedPane1.addTab("Citas", pnlCitas);
 
@@ -252,7 +230,7 @@ public class frmRealizarPago extends javax.swing.JFrame {
         pnlExamenesLayout.setHorizontalGroup(
             pnlExamenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlExamenesLayout.createSequentialGroup()
-                .addContainerGap(562, Short.MAX_VALUE)
+                .addContainerGap(606, Short.MAX_VALUE)
                 .addComponent(btnSolicitarExamen, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAgregarExamen, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -261,7 +239,7 @@ public class frmRealizarPago extends javax.swing.JFrame {
         pnlExamenesLayout.setVerticalGroup(
             pnlExamenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlExamenesLayout.createSequentialGroup()
-                .addContainerGap(191, Short.MAX_VALUE)
+                .addContainerGap(173, Short.MAX_VALUE)
                 .addGroup(pnlExamenesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSolicitarExamen, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregarExamen, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -270,14 +248,19 @@ public class frmRealizarPago extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Exámenes", pnlExamenes);
 
-        jLabel3.setText("09/07/2021");
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 47, -1, 240));
 
-        btnPagar.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel3.setText("09/07/2021");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, 67, 20));
+        jLabel3.setText( new java.text.SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()));
+
+        btnPagar.setBackground(new java.awt.Color(0, 51, 204));
         btnPagar.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         btnPagar.setForeground(new java.awt.Color(255, 255, 255));
+        btnPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_money_bag_25px.png"))); // NOI18N
         btnPagar.setText("Pagar");
         btnPagar.setToolTipText("");
-        btnPagar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnPagar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnPagar.setBorderPainted(false);
         btnPagar.setFocusCycleRoot(true);
         btnPagar.setFocusPainted(false);
@@ -286,90 +269,93 @@ public class frmRealizarPago extends javax.swing.JFrame {
                 btnPagarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 560, 87, 38));
 
         jLabel10.setFont(new java.awt.Font("Lucida Sans", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 51, 102));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_cash_register_40px.png"))); // NOI18N
         jLabel10.setText("Paga citas y exámenes");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 11, -1, 30));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel10)
-                        .addGap(74, 74, 74)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnLimpiar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSalir)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1))))
-                .addGap(20, 20, 20))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3))
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLimpiar)
-                    .addComponent(btnSalir)
-                    .addComponent(jLabel1)
-                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28))
-        );
+        btnNuevo.setBackground(new java.awt.Color(255, 255, 255));
+        btnNuevo.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        btnNuevo.setForeground(new java.awt.Color(51, 0, 255));
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_new_file_25px.png"))); // NOI18N
+        btnNuevo.setText("Nuevo");
+        btnNuevo.setToolTipText("");
+        btnNuevo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnNuevo.setBorderPainted(false);
+        btnNuevo.setFocusCycleRoot(true);
+        btnNuevo.setFocusPainted(false);
+        btnNuevo.setOpaque(false);
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 560, 89, 40));
 
-        jLabel3.setText( new java.text.SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()));
+        jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 12)); // NOI18N
+        jLabel2.setText("SERVICIOS A PAGAR:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 160, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        btnCrearCita.setBackground(new java.awt.Color(23, 100, 191));
+        btnCrearCita.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        btnCrearCita.setForeground(new java.awt.Color(255, 255, 255));
+        btnCrearCita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_planner_25px.png"))); // NOI18N
+        btnCrearCita.setText("Crear Cita");
+        btnCrearCita.setToolTipText("");
+        btnCrearCita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnCrearCita.setBorderPainted(false);
+        btnCrearCita.setFocusCycleRoot(true);
+        btnCrearCita.setFocusPainted(false);
+        btnCrearCita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearCitaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCrearCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 89, 38));
+
+        btnQuitar1.setBackground(new java.awt.Color(255, 255, 255));
+        btnQuitar1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        btnQuitar1.setForeground(new java.awt.Color(51, 0, 255));
+        btnQuitar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/delete.png"))); // NOI18N
+        btnQuitar1.setText("Quitar");
+        btnQuitar1.setToolTipText("");
+        btnQuitar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnQuitar1.setBorderPainted(false);
+        btnQuitar1.setFocusCycleRoot(true);
+        btnQuitar1.setFocusPainted(false);
+        btnQuitar1.setOpaque(false);
+        btnQuitar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuitar1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnQuitar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 89, 38));
+
+        btnAgregarCita.setBackground(new java.awt.Color(255, 255, 255));
+        btnAgregarCita.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        btnAgregarCita.setForeground(new java.awt.Color(51, 0, 255));
+        btnAgregarCita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icons8_add_dollar_25px.png"))); // NOI18N
+        btnAgregarCita.setText("Agregar");
+        btnAgregarCita.setToolTipText("");
+        btnAgregarCita.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAgregarCita.setBorderPainted(false);
+        btnAgregarCita.setFocusCycleRoot(true);
+        btnAgregarCita.setFocusPainted(false);
+        btnAgregarCita.setOpaque(false);
+        btnAgregarCita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarCitaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAgregarCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 100, 38));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        
-    }//GEN-LAST:event_btnLimpiarActionPerformed
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void txtBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyReleased
         
@@ -392,12 +378,28 @@ public class frmRealizarPago extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarExamenActionPerformed
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
-        // TODO add your handling code here:
+        realizarPagoController.realizarPago();
     }//GEN-LAST:event_btnPagarActionPerformed
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+        realizarPagoController.buscarCitas();
+    }//GEN-LAST:event_txtBuscarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         realizarPagoController.buscarCitas();
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        realizarPagoController.ocultar();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        realizarPagoController.nuevo();
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnQuitar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitar1ActionPerformed
+        realizarPagoController.quitar();
+    }//GEN-LAST:event_btnQuitar1ActionPerformed
 
     public JTextField getTxtBuscar() {
         return txtBuscar;
@@ -409,8 +411,9 @@ public class frmRealizarPago extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarExamen;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCrearCita;
-    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnPagar;
+    private javax.swing.JButton btnQuitar1;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSolicitarExamen;
     private javax.swing.JComboBox cmbBusc;
@@ -418,6 +421,7 @@ public class frmRealizarPago extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
