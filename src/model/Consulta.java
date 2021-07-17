@@ -19,7 +19,8 @@ public class Consulta {
     private String diagnostico;
     private String tratamiento;
     private String estado;
-    private Date fecha;
+    private String fecha;
+    private String nom_pac;
 
     public int getCod_cons() {
         return cod_cons;
@@ -125,12 +126,20 @@ public class Consulta {
         this.estado = estado;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+    
+    public String getNom_pac() {
+        return nom_pac;
+    }
+
+    public void setNom_pac(String nom_pac) {
+        this.nom_pac = nom_pac;
     }
 
     @Override

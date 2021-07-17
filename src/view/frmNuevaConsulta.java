@@ -8,6 +8,7 @@ package view;
 
 import controller.NuevaConsultaController;
 import static java.lang.Integer.parseInt;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -42,24 +43,23 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
         TxtAp = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        TxtDiagnostico = new javax.swing.JTextArea();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Txtra = new javax.swing.JTextArea();
+        TxtMotivo_consu = new javax.swing.JTextArea();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        TxtTratamiento = new javax.swing.JTextArea();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        TxtTalla = new javax.swing.JTextField();
+        TxtTemp = new javax.swing.JTextField();
+        TxtPeso = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -67,17 +67,20 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        TxtPresio_art = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        TxtNotas_ad = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        TxtFecha = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel4.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 42, 830, 10));
 
+        jLabel11.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel11.setText("DNI:");
         jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
@@ -96,10 +99,12 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
         });
         jPanel4.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel12.setText("Apellidos:");
         jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
         jPanel4.add(txtDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 150, -1));
 
+        jLabel13.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel13.setText("Nombres:");
         jPanel4.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
         jPanel4.add(TxtAp, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 220, -1));
@@ -107,78 +112,85 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
         jLabel14.setText("Motivo de consulta:");
         jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane1.setViewportView(jTextArea1);
+        TxtDiagnostico.setColumns(20);
+        TxtDiagnostico.setRows(5);
+        TxtDiagnostico.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(TxtDiagnostico);
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 230, 120));
 
+        jLabel15.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel15.setText("Diagnóstico:");
         jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
-        Txtra.setColumns(20);
-        Txtra.setRows(5);
-        Txtra.setWrapStyleWord(true);
-        jScrollPane2.setViewportView(Txtra);
+        TxtMotivo_consu.setColumns(20);
+        TxtMotivo_consu.setRows(5);
+        TxtMotivo_consu.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(TxtMotivo_consu);
 
         jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 230, 120));
 
+        jLabel16.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel16.setText("Tratamiento:");
-        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, -1));
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
+        TxtTratamiento.setColumns(20);
+        TxtTratamiento.setRows(5);
+        jScrollPane3.setViewportView(TxtTratamiento);
 
-        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 230, 120));
+        jPanel4.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 230, 120));
 
+        jLabel17.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel17.setText("Temp:");
         jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, -1));
 
+        jLabel18.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel18.setText("Peso:");
         jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, -1, -1));
 
+        jLabel19.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel19.setText("Talla:");
         jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, -1, -1));
-        jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 80, -1));
-        jPanel4.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 80, -1));
-        jPanel4.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 80, -1));
+        jPanel4.add(TxtTalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 80, -1));
+        jPanel4.add(TxtTemp, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 80, -1));
 
+        TxtPeso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtPesoActionPerformed(evt);
+            }
+        });
+        jPanel4.add(TxtPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 80, -1));
+
+        jLabel21.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel21.setText("kg");
         jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, -1, -1));
 
+        jLabel20.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel20.setText("C°");
         jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, -1, -1));
 
+        jLabel22.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel22.setText("cm");
         jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/1.jpg"))); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(30, 30, 30))
+            .addGap(0, 140, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(33, 33, 33))
+            .addGap(0, 130, Short.MAX_VALUE)
         );
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 140, 130));
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
 
+        jLabel23.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel23.setText("Historial del paciente:");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -188,7 +200,7 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel23)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,34 +213,59 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, 220, 280));
 
         jButton2.setText("Realizar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 510, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Rubik", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Análisis del paciente");
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 170, 30));
 
-        jLabel1.setText("Especialidad:");
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
+        jLabel1.setText("Fecha:");
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 100, -1));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicina general", "Ginecología", "Odontología", "Terapia de lenguaje", "Pediatría", "Laboratorio" }));
+        jPanel4.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 130, -1));
 
+        jLabel24.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel24.setText("P/A:");
         jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, -1, -1));
-        jPanel4.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 80, -1));
+        jPanel4.add(TxtPresio_art, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 80, -1));
 
+        jLabel26.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel26.setText("mmhg");
         jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, -1, -1));
 
+        jLabel27.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
         jLabel27.setText("Notas adicionales:");
-        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
+        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
+        TxtNotas_ad.setColumns(20);
+        TxtNotas_ad.setRows(5);
+        jScrollPane4.setViewportView(TxtNotas_ad);
 
-        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 230, 120));
+        jPanel4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 230, 120));
+
+        jLabel2.setFont(new java.awt.Font("Rubik", 0, 11)); // NOI18N
+        jLabel2.setText("Especialidad:");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, -1, -1));
+
+        TxtFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtFechaActionPerformed(evt);
+            }
+        });
+        jPanel4.add(TxtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -251,13 +288,29 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-       
+   
         NuevaConsultaController.mostrarDatosPaciente(parseInt(txtDni.getText()));
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void TxtNomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNomActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNomActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        NuevaConsultaController.nuevaConsulta();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+      
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void TxtPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtPesoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtPesoActionPerformed
+
+    private void TxtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtFechaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,15 +357,58 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
     public JTextField getTxtNom(){
         return TxtNom;
     }
-    
+     
     public JTextField getTxtAp(){
         return TxtAp;
     }
+    
+    public JTextField getTxtPeso(){
+        return TxtPeso;
+    }
+    
+    public JTextField getTxtTalla(){
+        return TxtTalla;
+    }
+    
+        public JTextField getTxtPresio_art(){
+        return TxtPresio_art;
+    }
+        
+        public JTextField getTxtTemp(){
+        return TxtTemp;
+    }
 
+        public JTextArea getTxtNotas_ad(){
+        return TxtNotas_ad;
+    }
+    
+        public JTextArea getTxtMotivo_consu(){
+        return TxtMotivo_consu;
+    }    
+        
+        public JTextArea getTxtDiagnostico(){
+        return TxtDiagnostico;
+    }  
+        
+        public JTextArea getTxtTratamiento(){
+        return TxtTratamiento;
+    } 
+        
+       public JTextField getTxtFecha(){
+        return TxtFecha;
+    }     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField TxtAp;
+    private javax.swing.JTextArea TxtDiagnostico;
+    private javax.swing.JTextField TxtFecha;
+    private javax.swing.JTextArea TxtMotivo_consu;
     private javax.swing.JTextField TxtNom;
-    private javax.swing.JTextArea Txtra;
+    private javax.swing.JTextArea TxtNotas_ad;
+    private javax.swing.JTextField TxtPeso;
+    private javax.swing.JTextField TxtPresio_art;
+    private javax.swing.JTextField TxtTalla;
+    private javax.swing.JTextField TxtTemp;
+    private javax.swing.JTextArea TxtTratamiento;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -327,12 +423,12 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JPanel jPanel1;
@@ -343,13 +439,6 @@ public class frmNuevaConsulta extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField txtDni;
     // End of variables declaration//GEN-END:variables
 
